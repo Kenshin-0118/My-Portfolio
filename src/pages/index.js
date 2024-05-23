@@ -15,7 +15,7 @@ function Profile() {
     <div className='min-h-screen w-full bg-[#000c18] p-4 md:p-8'>
       <section className='w-full h-full'>
         <div className='w-full h-full flex justify-center flex-col items-center backdrop-blur bg-opacity-75 border border-[#0ea5e9] border-[10px] p-4 rounded-3xl'>
-          <span>Conent here for landing page</span>
+          <span>Content here for landing page</span>
         </div>
       </section>
     </div>
