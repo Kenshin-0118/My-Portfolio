@@ -6,22 +6,25 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons"
 import { faBriefcase } from "@fortawesome/free-solid-svg-icons"
 
-const NavBar = () => {
+const NavBar = ({setSection}) => {
     const [isOpen, setIsOpen] = useState(false);
+    const [selected, setSelected] = useState('home');
   
     const toggleNavbar = () => {
       setIsOpen(!isOpen);
     };
   
-    const handleButtonClick = (message) => {
+    const handleButtonClick = (message,value) => {
       console.log(message);
+      setSection(value);
+      setSelected(value)
     };
   
     return (
       <nav className="bg-[#0A1622] p-4">
         <div className="container mx-auto flex items-center justify-between flex-wrap">
           <div className="flex items-center flex-shrink-0 text-white mr-6">
-            <span className="font-semibold text-xl tracking-tight"><FontAwesomeIcon icon={faBriefcase} className='pr-2'/> My Portfolio</span>
+            <span className="font-bold text-2xl tracking-tight"><FontAwesomeIcon icon={faBriefcase} className='pr-2'/> My Portfolio</span>
           </div>
           <div className="block lg:hidden">
             <button
@@ -35,30 +38,30 @@ const NavBar = () => {
             </button>
           </div>
           <div className={`w-full block flex-grow lg:flex lg:items-center lg:w-auto ${isOpen ? 'block' : 'hidden'}`}>
-            <div className="text-sm lg:flex-grow">
+            <div className="text-md font-semibold lg:flex-grow">
               <button
-                className="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-4"
-                onClick={() => handleButtonClick('Home button pressed')}
+                className="block mt-4 lg:inline-block lg:mt-0 text-gray-400 hover:text-white transition mr-4"
+                onClick={() => handleButtonClick('Home button pressed','home')}
               >
                 Home
               </button>
               <button
-                className="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-4"
-                onClick={() => handleButtonClick('Page 1 button pressed')}
+                className="block mt-4 lg:inline-block lg:mt-0 text-gray-400 hover:text-white transition mr-4"
+                onClick={() => handleButtonClick('About button pressed', 'about')}
               >
-                Page 1
+                About
               </button>
               <button
-                className="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-4"
-                onClick={() => handleButtonClick('Page 2 button pressed')}
+                className="block mt-4 lg:inline-block lg:mt-0 text-gray-400 hover:text-white transition mr-4"
+                onClick={() => handleButtonClick('Certificates button pressed','certificates')}
               >
-                Page 2
+                Certificates
               </button>
               <button
-                className="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white"
-                onClick={() => handleButtonClick('Page 3 button pressed')}
+                className="block mt-4 lg:inline-block lg:mt-0 text-gray-400 hover:text-white transition"
+                onClick={() => handleButtonClick('Education button pressed', 'education')}
               >
-                Page 3
+                Education
               </button>
             </div>
             <div>
