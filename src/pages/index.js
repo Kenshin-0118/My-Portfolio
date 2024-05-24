@@ -44,13 +44,15 @@ function Profile() {
     <Head>
       <title>My Portfolio</title>
     </Head>
+    <span className='home'/>
     <div className="w-full sticky top-0 bg-[#0A1622] z-50">
       <Navbar setSection={setSection}/>
     </div>
 
+
     <div className='flex flex-col w-screen gap-4'>
       {/* Landing Page Section */}
-      <section className='home w-full min-h-screen relative p-[5vh] md:p-[10vh]' data-aos="fade-up" data-aos-duration="500">
+      <section className='w-full min-h-screen relative p-[5vh] md:p-[10vh]' data-aos="fade-up" data-aos-duration="500">
         <div className='w-full h-[90vh] md:h-[80vh] glow-effect flex justify-center flex-col items-center backdrop-blur bg-opacity-75 border border-[#0ea5e9] border-2 p-4 rounded-xl overflow-hidden'>
           <div className='w-full h-full grid grid-cols-1 md:grid-cols-2 gap-2 lg:grid-cols-3'>
             <div className='col-span-1 lg:col-span-2 flex flex-col items-center justify-center p-4'>
@@ -76,7 +78,8 @@ function Profile() {
       </section>
 
       {/* About Me Section */}
-      <section className='about w-full h-full relative p-4 md:p-8' data-aos="fade-up" data-aos-duration="500">
+      <span className='about'/>
+      <section className='w-full h-full relative p-4 md:p-8' data-aos="fade-up" data-aos-duration="500">
       <div className="w-full sticky top-0 text-white font-bold text-5xl py-4 bg-[#000c18]">About me</div>
         <div className='w-full h-full flex justify-center flex-col items-center backdrop-blur bg-opacity-75 border border-[#0ea5e9] border-2 p-4 rounded-xl overflow-hidden'>
         <div className='w-full h-full grid grid-cols-1'>
@@ -91,7 +94,8 @@ function Profile() {
       </section>
 
       {/* Certificates Section */}
-      <section className='certificates w-full h-full relative p-4 md:p-8' data-aos="fade-up" data-aos-duration="500">
+      <span className='certificates'/>
+      <section className='w-full h-full relative p-4 md:p-8' data-aos="fade-up" data-aos-duration="500">
       <div className="w-full sticky top-0 text-white font-bold text-5xl py-4 bg-[#000c18]">Certificates</div>
         <div className='w-full h-full flex justify-center flex-col items-center backdrop-blur bg-opacity-75 border border-[#0ea5e9] border-2 p-4 rounded-xl overflow-hidden'>
           <div className='w-full h-full grid grid-cols-1'>
@@ -106,6 +110,7 @@ function Profile() {
       </section>
 
       {/* Education Section */}
+      <span className='education'/>
       <section className='education w-full h-full relative p-4 md:p-8' data-aos="fade-up" data-aos-duration="500">
       <div className="w-full sticky top-0 text-white font-bold text-5xl py-4 bg-[#000c18]">Education</div>
         <div className='w-full h-full flex justify-center flex-col items-center backdrop-blur bg-opacity-75 border border-[#0ea5e9] border-2 p-4 rounded-xl overflow-hidden'>
