@@ -18,10 +18,11 @@ const NavBar = ({setSection}) => {
       console.log(message);
       setSection(value);
       setSelected(value)
+      toggleNavbar()
     };
   
     return (
-      <nav className="bg-[#0A1622] p-4">
+      <nav className="bg-[#0A1622] p-4" onMouseLeave={()=>toggleNavbar()}>
         <div className="container mx-auto flex items-center justify-between flex-wrap">
           <div className="flex items-center flex-shrink-0 text-white mr-6">
             <span className="font-bold text-2xl tracking-tight"><FontAwesomeIcon icon={faBriefcase} className='pr-2'/> My Portfolio</span>
@@ -58,10 +59,16 @@ const NavBar = ({setSection}) => {
                 Certificates
               </button>
               <button
-                className="block mt-4 lg:inline-block lg:mt-0 text-gray-400 hover:text-white transition"
+                className="block mt-4 lg:inline-block lg:mt-0 text-gray-400 hover:text-white transition mr-4"
                 onClick={() => handleButtonClick('Education button pressed', 'education')}
               >
                 Education
+              </button>
+              <button
+                className="block mt-4 lg:inline-block lg:mt-0 text-gray-400 hover:text-white transition mr-4"
+                onClick={() => handleButtonClick('Journal button pressed', 'journal')}
+              >
+                Journal
               </button>
             </div>
             <div>

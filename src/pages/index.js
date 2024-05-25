@@ -3,6 +3,7 @@ import { Inter } from '@next/font/google'
 import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
+import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons"
 
 import Navbar from '../components/navbar';
 
@@ -14,7 +15,7 @@ import Head from 'next/head'
 const inter = Inter({ subsets: ['latin'] })
 
 function Profile() {
-  const [section, setSection] = useState('home');
+  const [section, setSection] = useState('placeholder');
 
    useEffect(() => {
      AOS.init({
@@ -23,10 +24,12 @@ function Profile() {
           })
     }, [])
 
-    const scroll = (section) => {
-      const target = document.querySelector(`.${section}`);
-      target.scrollIntoView({ behavior: 'smooth' });
-    }
+    const certificates = [
+      {type:'school', img:'school-1.jpg', title:'Test text', description:'test description'},
+      {type:'school', img:'school-2.jpg', title:'Test text', description:'test description'},
+      {type:'udemy', img:'udemy-1.jpg', title:'Test text', description:'test description'},
+      {type:'udemy', img:'udemy-2.jpg', title:'Test text', description:'test description'},
+    ]
 
     useEffect(() => {
       const target = document.querySelector(`.${section}`);
@@ -45,12 +48,12 @@ function Profile() {
       <title>My Portfolio</title>
     </Head>
     <span className='home'/>
-    <div className="w-full sticky top-0 bg-[#0A1622] z-50">
+    <nav className="w-full sticky top-0 bg-[#0A1622] bg-opacity-50 z-50">
       <Navbar setSection={setSection}/>
-    </div>
+    </nav>
 
 
-    <div className='flex flex-col w-screen gap-4'>
+    <div className='flex flex-col w-screen gap-4 relative'>
       {/* Landing Page Section */}
       <section className='w-full min-h-screen relative p-[5vh] md:p-[10vh]' data-aos="fade-up" data-aos-duration="500">
         <div className='w-full h-[90vh] md:h-[80vh] glow-effect flex justify-center flex-col items-center backdrop-blur bg-opacity-75 border border-[#0ea5e9] border-2 p-4 rounded-xl overflow-hidden'>
@@ -80,7 +83,7 @@ function Profile() {
       {/* About Me Section */}
       <span className='about'/>
       <section className='w-full h-full relative p-4 md:p-8' data-aos="fade-up" data-aos-duration="500">
-      <div className="w-full sticky top-0 text-white font-bold text-5xl py-4 bg-[#000c18]">About me</div>
+      <div className="w-full sticky top-16 z-50 text-white font-bold text-4xl py-4 bg-[#000c18]">About</div>
         <div className='w-full h-full flex justify-center flex-col items-center backdrop-blur bg-opacity-75 border border-[#0ea5e9] border-2 p-4 rounded-xl overflow-hidden'>
         <div className='w-full h-full grid grid-cols-1'>
             <div className='col-span-1 lg:col-span-2 flex flex-col items-center justify-center p-4'>
@@ -96,23 +99,28 @@ function Profile() {
       {/* Certificates Section */}
       <span className='certificates'/>
       <section className='w-full h-full relative p-4 md:p-8' data-aos="fade-up" data-aos-duration="500">
-      <div className="w-full sticky top-0 text-white font-bold text-5xl py-4 bg-[#000c18]">Certificates</div>
+      <div className="w-full sticky top-16 z-50 text-white font-bold text-4xl py-4 bg-[#000c18]">Certificates</div>
         <div className='w-full h-full flex justify-center flex-col items-center backdrop-blur bg-opacity-75 border border-[#0ea5e9] border-2 p-4 rounded-xl overflow-hidden'>
-          <div className='w-full h-full grid grid-cols-1'>
-            <div className='col-span-1 lg:col-span-2 flex flex-col items-center justify-center p-4'>
-              <span className='w-full py-8 text-white font-bold text-4xl sm:text-5xl lg:text-6xl text-center'
-              data-aos="zoom-in">
-                Certificates Section
-              </span>
-            </div>
-          </div>
+        <article
+        class="relative flex flex-row w-full snap-x gap-6
+        overflow-y-hidden overflow-x-scroll pt-2"
+        >
+          <div
+          v-for="(item, index) in filteredWeekly" key="item.id"
+          class="relative h-[282px] w-[500px] shrink-0 snap-center
+          overflow-hidden rounded bg-[#212121] backdrop-blur border-double
+          border-[#4cbe5c] border-2  group"
+          data-aos="zoom-in"
+          data-aos-once="true"
+          data-aos-delay="`${index}00`"/>
+        </article>
         </div>
       </section>
 
       {/* Education Section */}
       <span className='education'/>
       <section className='education w-full h-full relative p-4 md:p-8' data-aos="fade-up" data-aos-duration="500">
-      <div className="w-full sticky top-0 text-white font-bold text-5xl py-4 bg-[#000c18]">Education</div>
+      <div className="w-full sticky top-16 z-50 text-white font-bold text-4xl py-4 bg-[#000c18]">Education</div>
         <div className='w-full h-full flex justify-center flex-col items-center backdrop-blur bg-opacity-75 border border-[#0ea5e9] border-2 p-4 rounded-xl overflow-hidden'>
           <div className='w-full h-full grid grid-cols-1'>
             <div className='col-span-1 lg:col-span-2 flex flex-col items-center justify-center p-4'>
@@ -124,6 +132,37 @@ function Profile() {
           </div>
         </div>
       </section>
+
+      {/* Journal Section */}
+      <span className='journal'/>
+      <section className='w-full h-full relative p-4 md:p-8' data-aos="fade-up" data-aos-duration="500">
+      <div className="w-full sticky top-16 z-50 text-white font-bold text-4xl py-4 bg-[#000c18]">Journal</div>
+        <div className='w-full h-full flex justify-center flex-col items-center backdrop-blur bg-opacity-75 border border-[#0ea5e9] border-2 p-4 rounded-xl overflow-hidden'>
+        <article
+        class="relative flex flex-row w-full snap-x gap-6
+        overflow-y-hidden overflow-x-scroll pt-2"
+        >
+          <div
+          v-for="(item, index) in filteredWeekly" key="item.id"
+          class="relative h-[282px] w-[500px] shrink-0 snap-center
+          overflow-hidden rounded bg-[#212121] backdrop-blur border-double
+          border-[#4cbe5c] border-2  group"
+          data-aos="zoom-in"
+          data-aos-once="true"
+          data-aos-delay="`${index}00`"/>
+        </article>
+        </div>
+      </section>
+
+      <footer className='w-full bg-[#0A1622] p-4 flex flex-col items-center justify-center'>
+        <section className='w-full flex flex-row p-2 text-4xl gap-4 justify-center'>
+        <FontAwesomeIcon icon={faFacebook} className='text-gray-400 hover:text-white transition'/>
+        <FontAwesomeIcon icon={faInstagram} className='text-gray-400 hover:text-white transition'/>
+        </section>
+        <span className='w-full text-gray-400 p-2 text-center'>
+        © Kenneth Candia. All Rights Reserved.
+        </span>
+      </footer>
 
     </div>
     </div>
