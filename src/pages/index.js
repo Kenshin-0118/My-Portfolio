@@ -61,23 +61,23 @@ function Profile() {
 
     <div className='flex flex-col w-screen gap-4 relative mx-auto'>
       {/* Landing Page Section */}
-      <section className='w-full min-h-screen relative p-4 md:p-20' data-aos="fade-up" data-aos-duration="500">
-        <div className='w-full flex justify-center flex-col items-center backdrop-blur bg-opacity-75 p-14 rounded-xl overflow-hidden'>
+      <section className='w-full h-full relative p-4 md:p-20' data-aos="fade-up" data-aos-duration="500">
+        <div className='w-full flex justify-center flex-col items-center backdrop-blur bg-opacity-75 p-4 md:p-14 rounded-xl overflow-hidden'>
           <div className='w-full h-full grid grid-cols-1 md:grid-cols-2 gap-2 lg:grid-cols-3'>
             <div className='col-span-1 lg:col-span-2 flex flex-col items-center justify-center p-4'>
               <span className='w-full text-[#0d96d5] font-semibold text-xl sm:text-2xl lg:text-3xl text-left'
               data-aos="fade-right" data-aos-delay="500">
                 Hello!
               </span>
-              <span className='w-full text-white font-bold text-4xl sm:text-5xl lg:text-6xl text-left indent-4'
+              <span className='w-full text-white font-bold text-2xl sm:text-4xl lg:text-6xl text-left indent-4'
               data-aos="fade-right" data-aos-delay="650">
                 I'm Kenneth Candia
               </span>
-              <span className='w-full text-gray-500 font-semibold text-xl sm:text-2xl lg:text-3xl text-left indent-8'
+              <span className='w-full text-gray-500 font-semibold text-lg sm:text-2xl lg:text-3xl text-left8'
               data-aos="fade-right" data-aos-delay="800">
                 Aspiring Full-Stack Developer
               </span>
-              <span className='w-full text-white font-semibold text-lg md:text-xl text-right pt-8'
+              <span className='w-full text-white font-semibold text-lg md:text-xl text-right pt-10'
               data-aos="fade-up" data-aos-delay="1000">
                 <button className='px-6 py-2 border-2 border-[#0ea5e9] rounded-xl' onClick={() => setSection('about')}>
                   See More<FontAwesomeIcon icon={faAngleRight} className='pl-2'/>
