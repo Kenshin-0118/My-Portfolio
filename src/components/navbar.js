@@ -18,11 +18,11 @@ const NavBar = ({setSection}) => {
       console.log(message);
       setSection(value);
       setSelected(value)
-      toggleNavbar()
+      setIsOpen(false)
     };
   
     return (
-      <nav className="bg-[#0A1622] p-4" onMouseLeave={()=>toggleNavbar()}>
+      <nav className="bg-[#0A1622] p-4" onMouseLeave={()=>setIsOpen(false)}>
         <div className="container mx-auto flex items-center justify-between flex-wrap">
           <div className="flex items-center flex-shrink-0 text-white mr-6">
             <span className="font-bold text-2xl tracking-tight"><FontAwesomeIcon icon={faBriefcase} className='pr-2'/> My Portfolio</span>
