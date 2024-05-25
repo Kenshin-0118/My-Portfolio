@@ -24,6 +24,6 @@ body{
 
   .glow-effect {
     display: inline-block;
-    box-shadow: 0 0 6px #0ea5e9, 0 0 6px #0ea5e9, 0 0 6px #0ea5e9, 0 0 6px #0ea5e9;
+    box-shadow: 0 0 8px #0ea5e9, 0 0 8px #0ea5e9, 0 0 8px #0ea5e9, 0 0 8px #0ea5e9;
   }
   
