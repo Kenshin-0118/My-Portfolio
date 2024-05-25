@@ -6,6 +6,7 @@ body{
     overflow-x: hidden;
     overflow-y: scroll;
     background: #000c18;
+    font-family: Arial, sans-serif;
 }
 
 ::-webkit-scrollbar {

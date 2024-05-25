@@ -201,10 +201,10 @@ function Profile() {
     </div>
     <Modal show={showModal} onClose={closeModal}>
       <div className='flex flex-col'>
-        <span className='flex items-center justify-center'>
+        <span className='flex items-center justify-center mb-4'>
           <img src={certData.img} alt='cert-image' className='w-full  max-h-[85vh] object-contain'/>
         </span>
-        <span className='w-full text-white text-xl font-bold whitespace-nowrap truncate'>{certData.title}</span>
+        <span className='w-full text-white text-xl font-bold'>{certData.title}</span>
         <span className='text-gray-400 text-sm font-medium'>{certData.date}</span>
       </div>
     </Modal>
