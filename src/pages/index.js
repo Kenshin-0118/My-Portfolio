@@ -38,9 +38,9 @@ function Profile() {
 
     const certificates = [
       { id: 1, type: 'school', img: 'school-1.jpg', date: 'June 21st, 2023', title: 'Capstone Project Writing 1'},
-      { id: 2, type: 'smart', img: 'smart-3.jpg', date: 'August 18th, 2023', title: 'Network On Cloud'},
-      { id: 3, type: 'smart', img: 'smart-2.jpg', date: 'August 23rd, 2023', title: 'Data Visualization'},
-      { id: 4, type: 'school', img: 'school-2.jpg', date: 'August 5th, 2023', title: "Machine Learning Overview and it's Application"},
+      { id: 2, type: 'school', img: 'school-2.jpg', date: 'August 5th, 2023', title: "Machine Learning Overview and it's Application"},
+      { id: 3, type: 'smart', img: 'smart-3.jpg', date: 'August 18th, 2023', title: 'Network On Cloud'},
+      { id: 4, type: 'smart', img: 'smart-2.jpg', date: 'August 23rd, 2023', title: 'Data Visualization'},
       { id: 5, type: 'smart', img: 'smart-1.jpg', date: 'August 24th-25th, 2023', title: 'The Agile Mindset'},
       { id: 6, type: 'udemy', img: 'udemy-2.jpg', date: 'February 24th, 2024', title: 'JavaScript & jQuery - Certification Course for Beginners'},
       { id: 7, type: 'udemy', img: 'udemy-1.jpg', date: 'February 24th, 2024', title: 'HTML, CSS, & JavaScript - Certification Course for Beginners'},
@@ -61,29 +61,29 @@ function Profile() {
       }
     }, [section]);
 
-    // useEffect(() => {
-    //   // Disable right-click
-    //   document.addEventListener('contextmenu', (e) => e.preventDefault());
+    useEffect(() => {
+      // Disable right-click
+      document.addEventListener('contextmenu', (e) => e.preventDefault());
   
-    //   // Disable certain keyboard shortcuts
-    //   document.addEventListener('keydown', (e) => {
-    //     if (
-    //       e.key === 'F12' || // Open DevTools
-    //       (e.ctrlKey && e.shiftKey && e.key === 'I') || // Ctrl+Shift+I
-    //       (e.ctrlKey && e.shiftKey && e.key === 'J') || // Ctrl+Shift+J
-    //       (e.ctrlKey && e.key === 'U') || // Ctrl+U (view source)
-    //       (e.ctrlKey && e.key === 'S') || // Ctrl+S (save page)
-    //       (e.ctrlKey && e.key === 'C') || // Ctrl+C (copy)
-    //       (e.ctrlKey && e.key === 'A') || // Ctrl+A (select all)
-    //       (e.ctrlKey && e.key === 'E') || // Ctrl+E (find)
-    //       (e.ctrlKey && e.key === 'H') || // Ctrl+H (find and replace)
-    //       (e.ctrlKey && e.key === 'F') || // Ctrl+F (find)
-    //       (e.ctrlKey && e.key === 'G') // Ctrl+G (find again)
-    //     ) {
-    //       e.preventDefault();
-    //     }
-    //   });
-    // }, []);
+      // Disable certain keyboard shortcuts
+      document.addEventListener('keydown', (e) => {
+        if (
+          e.key === 'F12' || // Open DevTools
+          (e.ctrlKey && e.shiftKey && e.key === 'I') || // Ctrl+Shift+I
+          (e.ctrlKey && e.shiftKey && e.key === 'J') || // Ctrl+Shift+J
+          (e.ctrlKey && e.key === 'U') || // Ctrl+U (view source)
+          (e.ctrlKey && e.key === 'S') || // Ctrl+S (save page)
+          (e.ctrlKey && e.key === 'C') || // Ctrl+C (copy)
+          (e.ctrlKey && e.key === 'A') || // Ctrl+A (select all)
+          (e.ctrlKey && e.key === 'E') || // Ctrl+E (find)
+          (e.ctrlKey && e.key === 'H') || // Ctrl+H (find and replace)
+          (e.ctrlKey && e.key === 'F') || // Ctrl+F (find)
+          (e.ctrlKey && e.key === 'G') // Ctrl+G (find again)
+        ) {
+          e.preventDefault();
+        }
+      });
+    }, []);
     
 
   return (
@@ -108,22 +108,22 @@ function Profile() {
               </div>
             </div>
             <div className='col-span-1 lg:col-span-2 flex flex-col items-center justify-center p-4'>
-              <span className='w-full text-[#0d96d5] font-bold text-xl sm:text-2xl lg:text-3xl text-left'
+              <span className='w-full text-[#0d96d5] font-bold text-xl sm:text-2xl lg:text-3xl text-center md:text-left'
               data-aos="fade-right" data-aos-once="true" data-aos-delay="500" >
                 Hello!
               </span>
-              <span className='w-full text-white font-bold text-2xl sm:text-4xl lg:text-6xl text-left indent-4'
+              <span className='w-full text-white font-bold text-2xl sm:text-4xl lg:text-6xl text-center md:text-left md:indent-4'
               data-aos="fade-right" data-aos-once="true" data-aos-delay="650">
                 I'm Kenneth Candia
               </span>
-              <span className='w-full text-gray-500 font-semibold text-lg sm:text-2xl lg:text-3xl text-left md:indent-8'
+              <span className='w-full text-gray-500 font-semibold text-lg sm:text-2xl lg:text-3xl text-center md:text-left md:indent-8'
               data-aos="fade-right" data-aos-once="true" data-aos-delay="800">
                 Aspiring Full-Stack Developer
               </span>
               <span className='w-full text-white font-semibold text-lg md:text-xl text-right pt-10'
               data-aos="fade-up" data-aos-once="true" data-aos-delay="1000">
                 <button className='px-6 py-2 bg-[#0ea5e9] rounded-xl mr-2 mb-2'onClick={() => window.open('https://docs.google.com/document/d/1SXXXnNHS_BbdXi-wLbUZffXLIJjP-_GCPVI-0XZbCWI/edit?usp=sharing', '_blank')}>
-                  Show CV<FontAwesomeIcon icon={faFile} className='pl-2'/>
+                  Show CV
                 </button>
                 <button className='px-6 py-2 border-2 border-[#0ea5e9] rounded-xl' onClick={() => setSection('about')}>
                   See More<FontAwesomeIcon icon={faAngleRight} className='pl-2'/>
@@ -164,8 +164,7 @@ function Profile() {
         >
         {certificates.map(item => (
           <div key={item.id} className='col-span-1 group backdrop-blur border border-[#0ea5e9] border-2 bg-opacity-50 rounded-xl overflow-hidden hover:bg-opacity-100 transition shadow-2xl p-4'
-          onClick={()=>openModal(item)}
-          data-aos="fade-up">
+          onClick={()=>openModal(item)}>
             <div className='w-full overflow-hidden rounded-lg'>
              <img src={item.img} alt='cert-image' className='transition group-hover:scale-110 object-cover aspect-video'/>
             </div>

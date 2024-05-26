@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html{
+  width: 100%;
+}
+
 body{
     overflow-x: hidden;
     overflow-y: scroll;
