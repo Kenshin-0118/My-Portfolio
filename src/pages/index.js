@@ -3,7 +3,7 @@ import { Inter } from '@next/font/google'
 import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight, faArrowRight, faFile  } from "@fortawesome/free-solid-svg-icons";
-import { faApper, faFacebook, faInstagram} from "@fortawesome/free-brands-svg-icons"
+import { faApper, faCss3, faFacebook, faHtml5, faInstagram, faJava, faJs, faLaravel, faPhp, faReact, faVuejs} from "@fortawesome/free-brands-svg-icons"
 
 import Navbar from '../components/navbar';
 import Modal from '../components/modal';
@@ -47,6 +47,27 @@ function Profile() {
       { id: 8, type: 'school', img: 'psycho-result.jpg', date: 'March 4th, 2024', title: 'Psychological Test Results'},
       { id: 9, type: 'school', img: 'psycho-test.jpg', date: 'March 16th, 2024', title: 'Psychological Test Interpretation'},
     ]
+
+    const techs = [
+      { id: 1, name: 'C++', iconClass: 'devicon-cplusplus-plain' },
+      { id: 2, name: 'HTML', iconClass: 'devicon-html5-plain' },
+      { id: 3, name: 'CSS', iconClass: 'devicon-css3-plain' },
+      { id: 4, name: 'PHP', iconClass: 'devicon-php-plain' },
+      { id: 5, name: 'Bootstrap', iconClass: 'devicon-bootstrap-plain' },
+      { id: 6, name: 'Java', iconClass: 'devicon-java-plain' },
+      { id: 7, name: 'MySQL', iconClass: 'devicon-mysql-plain' },
+      { id: 8, name: 'C#', iconClass: 'devicon-csharp-plain' },
+      { id: 9, name: 'SQL Server', iconClass: 'devicon-microsoftsqlserver-plain' },
+      { id: 10, name: 'JavaScript', iconClass: 'devicon-javascript-plain' },
+      { id: 11, name: 'React', iconClass: 'devicon-react-original' },
+      { id: 12, name: 'Next.js', iconClass: 'devicon-nextjs-plain' },
+      { id: 13, name: 'Tailwind', iconClass: 'devicon-tailwindcss-plain' },
+      { id: 14, name: 'Vue', iconClass: 'devicon-vuejs-plain' },
+      { id: 15, name: 'Laravel', iconClass: 'devicon-laravel-plain' },
+      { id: 16, name: 'Firebase', iconClass: 'devicon-firebase-plain' },
+      { id: 17, name: 'Android Studio', iconClass: 'devicon-android-plain' },
+      { id: 18, name: 'Github', iconClass: 'devicon-github-original' },
+    ]
     
     
 
@@ -61,29 +82,29 @@ function Profile() {
       }
     }, [section]);
 
-    useEffect(() => {
-      // Disable right-click
-      document.addEventListener('contextmenu', (e) => e.preventDefault());
+    // useEffect(() => {
+    //   // Disable right-click
+    //   document.addEventListener('contextmenu', (e) => e.preventDefault());
   
-      // Disable certain keyboard shortcuts
-      document.addEventListener('keydown', (e) => {
-        if (
-          e.key === 'F12' || // Open DevTools
-          (e.ctrlKey && e.shiftKey && e.key === 'I') || // Ctrl+Shift+I
-          (e.ctrlKey && e.shiftKey && e.key === 'J') || // Ctrl+Shift+J
-          (e.ctrlKey && e.key === 'U') || // Ctrl+U (view source)
-          (e.ctrlKey && e.key === 'S') || // Ctrl+S (save page)
-          (e.ctrlKey && e.key === 'C') || // Ctrl+C (copy)
-          (e.ctrlKey && e.key === 'A') || // Ctrl+A (select all)
-          (e.ctrlKey && e.key === 'E') || // Ctrl+E (find)
-          (e.ctrlKey && e.key === 'H') || // Ctrl+H (find and replace)
-          (e.ctrlKey && e.key === 'F') || // Ctrl+F (find)
-          (e.ctrlKey && e.key === 'G') // Ctrl+G (find again)
-        ) {
-          e.preventDefault();
-        }
-      });
-    }, []);
+    //   // Disable certain keyboard shortcuts
+    //   document.addEventListener('keydown', (e) => {
+    //     if (
+    //       e.key === 'F12' || // Open DevTools
+    //       (e.ctrlKey && e.shiftKey && e.key === 'I') || // Ctrl+Shift+I
+    //       (e.ctrlKey && e.shiftKey && e.key === 'J') || // Ctrl+Shift+J
+    //       (e.ctrlKey && e.key === 'U') || // Ctrl+U (view source)
+    //       (e.ctrlKey && e.key === 'S') || // Ctrl+S (save page)
+    //       (e.ctrlKey && e.key === 'C') || // Ctrl+C (copy)
+    //       (e.ctrlKey && e.key === 'A') || // Ctrl+A (select all)
+    //       (e.ctrlKey && e.key === 'E') || // Ctrl+E (find)
+    //       (e.ctrlKey && e.key === 'H') || // Ctrl+H (find and replace)
+    //       (e.ctrlKey && e.key === 'F') || // Ctrl+F (find)
+    //       (e.ctrlKey && e.key === 'G') // Ctrl+G (find again)
+    //     ) {
+    //       e.preventDefault();
+    //     }
+    //   });
+    // }, []);
     
 
   return (
@@ -151,7 +172,21 @@ function Profile() {
       <div className='col-span-1 flex items-center p-2' data-aos="fade-left">
       <img src='programmer.gif' alt='my-photo' className='w-full transition squible glow-effect'/>
       </div>
-      <div className="col-span-1 lg:col-span-3 text-white font-bold text-3xl  md:text-4xl py-4 bg-[#000c18]">Tech Stack</div>
+      <div className="col-span-1 lg:col-span-3 text-white font-bold text-3xl  md:text-4xl py-4 bg-[#000c18]"
+      data-aos="fade-up">
+        <span className='w-full'>Tech Stack</span>
+        <article
+        class="relative flex flex-row w-full snap-x gap-6 overflow-y-hidden overflow-x-scroll pt-2">
+          {techs.map(item => (
+          <div key={item.id}
+          className='relative shrink-0 snap-center px-4 py-2 text-6xl flex flex-col text-center'>
+            <i className={item.iconClass}></i>
+            <span className='text-xl pt-2'>{item.name}</span>
+            <i class="bi bi-4-square"></i>
+          </div>
+        ))}
+        </article>
+      </div>
       </div>
       </section>
 
