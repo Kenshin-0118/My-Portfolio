@@ -2,15 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-html{
-  width: 100%;
+html, body {
+  min-width: 100%;
 }
 
 body{
     overflow-x: hidden;
     overflow-y: scroll;
     background: #000c18;
-    font-family: Arial, sans-serif !important;
+    font-family: 'Montserrat', sans-serif;
 }
 
 ::-webkit-scrollbar {

@@ -113,9 +113,9 @@ function Profile() {
       <title>My Portfolio</title>
     </Head>
     <span className='home'/>
-    <nav className="w-full sticky top-0 bg-[#0A1622] bg-opacity-50 z-40 shadow-2xl">
+    <div className="w-full sticky top-0 bg-[#0A1622] bg-opacity-50 z-40 shadow-2xl">
       <Navbar setSection={setSection}/>
-    </nav>
+    </div>
 
 
     <div className='flex flex-col w-screen gap-4 relative mx-auto'>
@@ -195,7 +195,7 @@ function Profile() {
       <section className='w-full h-full relative p-4 md:p-8' data-aos="fade-up" data-aos-duration="500">
       <div className="w-full sticky top-16 z-50 text-white font-bold text-3xl  md:text-4xl py-4 bg-[#000c18]">Certificates</div>
         <article
-        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 p-4"
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 p-4 md:px-8 lg:px-16"
         >
         {certificates.map(item => (
           <div key={item.id} className='col-span-1 group backdrop-blur border border-[#0ea5e9] border-2 bg-opacity-50 rounded-xl overflow-hidden hover:bg-opacity-100 transition shadow-2xl p-4'
