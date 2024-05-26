@@ -27,4 +27,48 @@ body{
     display: inline-block;
     box-shadow: 0 0 8px #0ea5e9, 0 0 8px #0ea5e9, 0 0 8px #0ea5e9, 0 0 8px #0ea5e9;
   }
+
+/* styles.css */
+.squible {
+  border: 4px solid #0ea5e9;
+  -webkit-animation: squible 3s linear infinite;
+  animation: squible 3s linear infinite;
+}
+
+@-webkit-keyframes squible {
+  0% {
+    border-radius: 60% 70% 80% 90%; /* Initial position */
+  }
+  25% {
+    border-radius: 90% 60% 70% 80%;
+  }
+  50% {
+    border-radius: 80% 90% 60% 70%;
+  }
+  80% {
+    border-radius: 70% 80% 90% 60%;
+  }
+  100% {
+    border-radius: 60% 70% 80% 90%; /* Return to initial position */
+  }
+}
+
+@keyframes squible {
+  0% {
+    border-radius: 60% 70% 80% 90%; /* Initial position */
+  }
+  25% {
+    border-radius: 90% 60% 70% 80%;
+  }
+  50% {
+    border-radius: 80% 90% 60% 70%;
+  }
+  80% {
+    border-radius: 70% 80% 90% 60%;
+  }
+  100% {
+    border-radius: 60% 70% 80% 90%; /* Return to initial position */
+  }
+}
+
   

@@ -1,10 +1,20 @@
 // components/Modal.js
 import React from 'react';
+import { useEffect, useState } from "react";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Modal = ({ show, onClose, children }) => {
   if (!show) {
     return null;
   }
+
+  useEffect(() => {
+    AOS.init({
+         duration: 800,
+         once: false,
+         })
+   }, [])
 
   const handleBackdropClick = (e) => {
     if (e.target === e.currentTarget) {
@@ -18,7 +28,7 @@ const Modal = ({ show, onClose, children }) => {
         <button onClick={onClose} className="modal-close">
           &times;
         </button>
-      <div className="modal-content">
+      <div className="modal-content" data-aos="fade-up" data-aos-once="true" data-aos-duration="300">
         {children}
       </div>
       <style jsx>{`

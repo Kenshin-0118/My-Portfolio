@@ -102,6 +102,11 @@ function Profile() {
       <section className='w-full h-full relative p-4 md:p-20' data-aos="fade-up" data-aos-duration="500">
         <div className='w-full flex justify-center flex-col items-center backdrop-blur bg-opacity-75 p-4 md:p-14 rounded-xl overflow-hidden'>
           <div className='w-full h-full grid grid-cols-1 md:grid-cols-2 gap-2 lg:grid-cols-3'>
+          <div className='col-span-1 p-4 flex flex-col items-center justify-center' data-aos="fade-left" data-aos-delay="300">
+              <div className='overflow-hidden rounded-full aspect-square bg-[#0d96d5] border-4 z-10 glow-effect'>
+              <img src='ako.png' alt='my-photo' className='h-full w-full transition object-cover'/>
+              </div>
+            </div>
             <div className='col-span-1 lg:col-span-2 flex flex-col items-center justify-center p-4'>
               <span className='w-full text-[#0d96d5] font-bold text-xl sm:text-2xl lg:text-3xl text-left'
               data-aos="fade-right" data-aos-delay="500">
@@ -111,7 +116,7 @@ function Profile() {
               data-aos="fade-right" data-aos-delay="650">
                 I'm Kenneth Candia
               </span>
-              <span className='w-full text-gray-500 font-semibold text-lg sm:text-2xl lg:text-3xl text-left8'
+              <span className='w-full text-gray-500 font-semibold text-lg sm:text-2xl lg:text-3xl text-left md:indent-8'
               data-aos="fade-right" data-aos-delay="800">
                 Aspiring Full-Stack Developer
               </span>
@@ -125,11 +130,6 @@ function Profile() {
                 </button>
               </span>
             </div>
-            <div className='col-span-1 p-4 flex flex-col items-center justify-center' data-aos="fade-left" data-aos-delay="300">
-              <div className='overflow-hidden rounded-full aspect-square bg-[#0d96d5] border-4 z-10 glow-effect'>
-              <img src='ako.png' alt='my-photo' className='h-full w-full transition object-cover'/>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -137,23 +137,27 @@ function Profile() {
       {/* About Me Section */}
       <span className='about'/>
       <section className='w-full h-full relative p-4 md:p-8' data-aos="fade-up" data-aos-duration="500">
-      <div className="w-full sticky top-16 z-50 text-white font-bold text-4xl py-4 bg-[#000c18]">About</div>
-        <div className='w-full h-full flex justify-center flex-col items-center backdrop-blur bg-opacity-75 border border-[#0ea5e9] border-2 p-4 rounded-xl overflow-hidden'>
-        <div className='w-full h-full grid grid-cols-1'>
-            <div className='col-span-1 lg:col-span-2 flex flex-col items-center justify-center p-4'>
-              <span className='w-full py-8 text-white font-bold text-4xl sm:text-5xl lg:text-6xl text-center'
-              data-aos="zoom-in">
-                About Me Section
-              </span>
-            </div>
-          </div>
-        </div>
+      <div className="w-full sticky top-16 z-50 text-white font-bold text-3xl  md:text-4xl py-4 bg-[#000c18]">About</div>
+      <div className='grid grid-cols-1 md:grid-cols-3  md:px-8 lg:px-16'>
+      <div className='col-span-1 md:col-span-2 h-full flex justify-center flex-col items-center p-4 rounded-xl overflow-hidden gap-4'>
+          <span className='w-full text-[#0ea5e9] font-semibold text-2xl sm:text-3xl lg:text-4xl text-left'>
+            Hello, I am Kenneth I. Candia
+          </span>
+          <span className='w-full text-slate-300 font-medium text-xl sm:text-2xl lg:text-3xl text-left indent-8'>
+          A Graduating BSIT Student from the Holy Cross of Davao College, aspiring to be a proficient Full-Stack Developer. I have a strong foundation in front-end and back-end technologies, with hands-on experience in various programming languages and frameworks. Passionate about creating seamless web applications, I am eager to apply my skills to real-world projects, continuously learn new technologies, and contribute to innovative solutions that make a positive impact.
+          </span>
+      </div>
+      <div className='col-span-1 p-2'>
+      <img src='programmer.gif' alt='my-photo' className='w-full transition squible glow-effect'/>
+      </div>
+      <div className="col-span-1 md:col-span-2 lg:col-span-3 text-white font-bold text-3xl  md:text-4xl py-4 bg-[#000c18]">Tech Stack</div>
+      </div>
       </section>
 
       {/* Certificates Section */}
       <span className='certificates'/>
       <section className='w-full h-full relative p-4 md:p-8' data-aos="fade-up" data-aos-duration="500">
-      <div className="w-full sticky top-16 z-50 text-white font-bold text-4xl py-4 bg-[#000c18]">Certificates</div>
+      <div className="w-full sticky top-16 z-50 text-white font-bold text-3xl  md:text-4xl py-4 bg-[#000c18]">Certificates</div>
         <article
         class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 p-4"
         >
@@ -181,7 +185,7 @@ function Profile() {
       {/* Education Section */}
       <span className='education'/>
       <section className='education w-full h-full relative p-4 md:p-8' data-aos="fade-up" data-aos-duration="500">
-      <div className="w-full sticky top-16 z-50 text-white font-bold text-4xl py-4 bg-[#000c18]">Education</div>
+      <div className="w-full sticky top-16 z-50 text-white font-bold text-3xl  md:text-4xl py-4 bg-[#000c18]">Education</div>
         <div className='w-full h-full flex justify-center flex-col items-center backdrop-blur bg-opacity-75 border border-[#0ea5e9] border-2 p-4 rounded-xl overflow-hidden'>
           <div className='w-full h-full grid grid-cols-1'>
             <div className='col-span-1 lg:col-span-2 flex flex-col items-center justify-center p-4'>
@@ -197,7 +201,7 @@ function Profile() {
       {/* Journal Section */}
       <span className='journal'/>
       <section className='w-full h-full relative p-4 md:p-8' data-aos="fade-up" data-aos-duration="500">
-      <div className="w-full sticky top-16 z-50 text-white font-bold text-4xl py-4 bg-[#000c18]">Journal</div>
+      <div className="w-full sticky top-16 z-50 text-white font-bold text-3xl  md:text-4xl py-4 bg-[#000c18]">Journal</div>
         <div className='w-full h-full flex justify-center flex-col items-center backdrop-blur bg-opacity-75 border border-[#0ea5e9] border-2 p-4 rounded-xl overflow-hidden'>
         <article
         class="relative flex flex-row w-full snap-x gap-6
