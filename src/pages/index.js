@@ -49,7 +49,7 @@ function Profile() {
     ]
 
     const techs = [
-      { id: 1, name: 'C++', iconClass: 'devicon-cplusplus-plain' },
+      { id: 1, name: 'Figma', iconClass: 'devicon-figma-plain' },
       { id: 2, name: 'HTML', iconClass: 'devicon-html5-plain' },
       { id: 3, name: 'CSS', iconClass: 'devicon-css3-plain' },
       { id: 4, name: 'PHP', iconClass: 'devicon-php-plain' },
@@ -218,7 +218,7 @@ function Profile() {
       </section>
 
       {/* Education Section */}
-      <span className='education'/>
+      {/* <span className='education'/>
       <section className='education w-full h-full relative p-4 md:p-8' data-aos="fade-up" data-aos-duration="500">
       <div className="w-full sticky top-16 z-50 text-white font-bold text-3xl  md:text-4xl py-4 bg-[#000c18]">Education</div>
         <div className='w-full h-full flex justify-center flex-col items-center backdrop-blur bg-opacity-75 border border-[#0ea5e9] border-2 p-4 rounded-xl overflow-hidden'>
@@ -231,7 +231,7 @@ function Profile() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Journal Section */}
       <span className='journal'/>

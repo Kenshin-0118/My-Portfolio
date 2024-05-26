@@ -58,12 +58,12 @@ const NavBar = ({setSection}) => {
               >
                 Certificates
               </button>
-              <button
+              {/* <button
                 className="block mt-4 lg:inline-block lg:mt-0 text-gray-400 hover:text-white transition mr-4"
                 onClick={() => handleButtonClick('Education button pressed', 'education')}
               >
                 Education
-              </button>
+              </button> */}
               <button
                 className="block mt-4 lg:inline-block lg:mt-0 text-gray-400 hover:text-white transition mr-4"
                 onClick={() => handleButtonClick('Journal button pressed', 'journal')}
