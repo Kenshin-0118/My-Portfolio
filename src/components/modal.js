@@ -37,26 +37,36 @@ const Modal = ({ show, onClose, children }) => {
           background: #171721;
           padding: 20px;
           border-radius: 5px;
+          border: 2px solid #0ea5e9;
           position: relative;
           max-width: 80%;
           max-height: 90%;
           width: 100%;
           overflow-x: scroll;
+          scrollbar-width: none; /* Firefox */
+          -ms-overflow-style: none;  /* Internet Explorer 10+ */
         }
-        @media (max-width: 768px) {
-          .modal-content {
-            max-width: 95%;
-          }
+        .modal-content::-webkit-scrollbar {
+          display: none; /* Safari and Chrome */
         }
         .modal-close {
+          z-index: 60;
           position: absolute;
           top: 10px;
           right: 10px;
           background: none;
           border: none;
-          font-size: 36px;
+          font-size: 44px;
           cursor: pointer;
           color: white;
+        }
+        @media (max-width: 768px) {
+          .modal-content {
+            max-width: 95%;
+          }
+          .modal-close {
+            font-size: 36px;
+          }
         }
       `}</style>
     </div>

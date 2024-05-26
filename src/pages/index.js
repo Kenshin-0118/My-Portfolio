@@ -2,8 +2,8 @@
 import { Inter } from '@next/font/google'
 import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleRight, faArrowRight  } from "@fortawesome/free-solid-svg-icons";
-import { faFacebook, faInstagram} from "@fortawesome/free-brands-svg-icons"
+import { faAngleRight, faArrowRight, faFile  } from "@fortawesome/free-solid-svg-icons";
+import { faApper, faFacebook, faInstagram} from "@fortawesome/free-brands-svg-icons"
 
 import Navbar from '../components/navbar';
 import Modal from '../components/modal';
@@ -60,6 +60,30 @@ function Profile() {
         setSection('Dummy')
       }
     }, [section]);
+
+    useEffect(() => {
+      // Disable right-click
+      document.addEventListener('contextmenu', (e) => e.preventDefault());
+  
+      // Disable certain keyboard shortcuts
+      document.addEventListener('keydown', (e) => {
+        if (
+          e.key === 'F12' || // Open DevTools
+          (e.ctrlKey && e.shiftKey && e.key === 'I') || // Ctrl+Shift+I
+          (e.ctrlKey && e.shiftKey && e.key === 'J') || // Ctrl+Shift+J
+          (e.ctrlKey && e.key === 'U') || // Ctrl+U (view source)
+          (e.ctrlKey && e.key === 'S') || // Ctrl+S (save page)
+          (e.ctrlKey && e.key === 'C') || // Ctrl+C (copy)
+          (e.ctrlKey && e.key === 'A') || // Ctrl+A (select all)
+          (e.ctrlKey && e.key === 'E') || // Ctrl+E (find)
+          (e.ctrlKey && e.key === 'H') || // Ctrl+H (find and replace)
+          (e.ctrlKey && e.key === 'F') || // Ctrl+F (find)
+          (e.ctrlKey && e.key === 'G') // Ctrl+G (find again)
+        ) {
+          e.preventDefault();
+        }
+      });
+    }, []);
     
 
   return (
@@ -93,6 +117,9 @@ function Profile() {
               </span>
               <span className='w-full text-white font-semibold text-lg md:text-xl text-right pt-10'
               data-aos="fade-up" data-aos-delay="1000">
+                <button className='px-6 py-2 bg-[#0ea5e9] rounded-xl mr-2'onClick={() => window.open('https://docs.google.com/document/d/1SXXXnNHS_BbdXi-wLbUZffXLIJjP-_GCPVI-0XZbCWI/edit?usp=sharing', '_blank')}>
+                  Show CV<FontAwesomeIcon icon={faFile} className='pl-2'/>
+                </button>
                 <button className='px-6 py-2 border-2 border-[#0ea5e9] rounded-xl' onClick={() => setSection('about')}>
                   See More<FontAwesomeIcon icon={faAngleRight} className='pl-2'/>
                 </button>
@@ -204,8 +231,8 @@ function Profile() {
         <span className='flex items-center justify-center mb-4'>
           <img src={certData.img} alt='cert-image' className='w-full  max-h-[85vh] object-contain'/>
         </span>
-        <span className='w-full text-white text-xl font-bold'>{certData.title}</span>
-        <span className='text-gray-400 text-sm font-medium'>{certData.date}</span>
+        <span className='w-full text-white text-xl md:text-3xl font-bold'>{certData.title}</span>
+        <span className='text-gray-400 text-sm md:text-lg font-medium'>{certData.date}</span>
       </div>
     </Modal>
     </div>
