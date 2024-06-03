@@ -84,7 +84,6 @@ function Profile() {
       { img: 'infosoft/3.jpg' },
       { img: 'infosoft/4.jpg' },
       { img: 'infosoft/5.jpg' },
-      { img: 'infosoft/6.jpg' },
     ]
     
     
@@ -145,8 +144,8 @@ function Profile() {
 
     <div className='flex flex-col w-screen gap-4 relative mx-auto'>
       {/* Landing Page Section */}
-      <section className='w-full h-full relative p-4 md:p-20' data-aos="fade-up" data-aos-once="true" data-aos-duration="500">
-        <div className='w-full flex justify-center flex-col items-center backdrop-blur bg-opacity-75 p-4 md:p-14 rounded-xl overflow-hidden'>
+      <section className='landing w-full h-full relative p-4 md:p-20' data-aos="fade-up" data-aos-once="true" data-aos-duration="500">
+        <div className='w-full flex justify-center flex-col items-cente bg-opacity-75 p-4 md:p-14 rounded-xl overflow-hidden'>
           <div className='w-full h-full grid grid-cols-1 md:grid-cols-2 gap-2 lg:grid-cols-3'>
           <div className='col-span-1 p-4 flex flex-col items-center justify-center' data-aos="fade-right" data-aos-once="true" data-aos-delay="300">
               <div className='overflow-hidden rounded-full aspect-square bg-[#0d96d5] border-4 z-10 glow-effect'>
@@ -182,8 +181,8 @@ function Profile() {
 
       {/* About Me Section */}
       <span className='about'/>
-      <section className='w-full h-full relative p-4 md:p-8' data-aos="fade-up" data-aos-duration="500">
-      <div className="w-full sticky top-16 z-50 text-white font-bold text-3xl  md:text-4xl py-4 bg-[#000c18]">About</div>
+      <section className='w-full h-full relative' data-aos="fade-up" data-aos-duration="500">
+      <div className="w-full sticky top-16 z-50 text-white font-bold text-3xl  px-4 , md:px-8 md:text-4xl py-4 bg-[#000c18]">About</div>
       <div className='grid grid-cols-1 lg:grid-cols-3  md:px-8 lg:px-16'>
       <div className='col-span-1 lg:col-span-2 h-full flex justify-center flex-col items-center p-4 rounded-xl overflow-hidden gap-4'
        data-aos="fade-right">
@@ -197,7 +196,7 @@ function Profile() {
       <div className='col-span-1 flex items-center p-2' data-aos="fade-left">
       <img src='programmer.gif' alt='my-photo' className='w-full transition squible glow-effect'/>
       </div>
-      <div className="col-span-1 lg:col-span-3 text-white font-bold text-3xl  md:text-4xl py-4 bg-[#000c18]"
+      <div className="col-span-1 lg:col-span-3 text-white font-bold text-3xl  px-4 , md:px-8 md:text-4xl py-4 bg-[#000c18]"
       data-aos="fade-up">
         <span className='w-full'>Tech Stack</span>
         <article
@@ -217,14 +216,14 @@ function Profile() {
 
       {/* Certificates Section */}
       <span className='certificates'/>
-      <section className='w-full h-full relative p-4 md:p-8' data-aos="fade-up" data-aos-duration="500">
-      <div className="w-full sticky top-16 z-50 text-white font-bold text-3xl  md:text-4xl py-4 bg-[#000c18]">Certificates</div>
+      <section className='w-full h-full relative' data-aos="fade-up" data-aos-duration="500">
+      <div className="w-full sticky top-16 z-50 text-white font-bold text-3xl  px-4 , md:px-8 md:text-4xl py-4 bg-[#000c18]">Certificates</div>
         <article
-        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 p-4 md:px-8 lg:px-16"
+        class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 p-4 md:px-8 lg:px-16"
         >
         {certificates.map(item => (
           <div key={item.id} className='col-span-1 group backdrop-blur border border-[#0ea5e9] border-2 bg-opacity-50 rounded-xl overflow-hidden hover:bg-opacity-100 transition shadow-2xl p-4'
-          onClick={()=>openModal(item)}>
+          onClick={()=>openModal(item)} data-aos="fade-up">
             <div className='w-full overflow-hidden rounded-lg'>
              <img src={item.img} alt='cert-image' className='transition group-hover:scale-110 object-cover aspect-video'/>
             </div>
@@ -244,8 +243,8 @@ function Profile() {
 
       {/* Education Section */}
       {/* <span className='education'/>
-      <section className='education w-full h-full relative p-4 md:p-8' data-aos="fade-up" data-aos-duration="500">
-      <div className="w-full sticky top-16 z-50 text-white font-bold text-3xl  md:text-4xl py-4 bg-[#000c18]">Education</div>
+      <section className='education w-full h-full relative' data-aos="fade-up" data-aos-duration="500">
+      <div className="w-full sticky top-16 z-50 text-white font-bold text-3xl  px-4 , md:px-8 md:text-4xl py-4 bg-[#000c18]">Education</div>
         <div className='w-full h-full flex justify-center flex-col items-center backdrop-blur bg-opacity-75 border border-[#0ea5e9] border-2 p-4 rounded-xl overflow-hidden'>
           <div className='w-full h-full grid grid-cols-1'>
             <div className='col-span-1 lg:col-span-2 flex flex-col items-center justify-center p-4'>
@@ -260,8 +259,8 @@ function Profile() {
 
       {/* Journal Section */}
       <span className='journal'/>
-      <section className='w-full h-full relative p-4 md:p-8' data-aos="fade-up" data-aos-duration="500">
-      <div className="w-full sticky top-16 z-50 text-white font-bold text-3xl  md:text-4xl py-4 bg-[#000c18]">Journal</div>
+      <section className='w-full h-full relative' data-aos="fade-up" data-aos-duration="500">
+      <div className="w-full sticky top-16 z-50 text-white font-bold text-3xl  px-4 , md:px-8 md:text-4xl py-4 bg-[#000c18]">Journal</div>
         <div className='w-full h-full flex justify-center flex-col items-center backdrop-blur bg-opacity-75 p-4 rounded-xl overflow-hidden'>
         <article
         class="grid grid-cols-1 md:grid-cols-2 gap-4"
@@ -275,8 +274,8 @@ function Profile() {
           ))}
         </Carousel>
         </div>
-        <div className='col-span-1' data-aos="fade-left">
-        <span className='flex item-center text-slate-300 font-medium text-center text-lg sm:text-xl lg:text-xl text-center lg:text-left md:indent-8'>
+        <div className='col-span-1 flex items-center' data-aos="fade-left">
+        <span className='w-full text-slate-300 font-medium text-center text-lg sm:text-xl lg:text-xl text-center lg:text-left md:indent-8'>
         Even though my teammates and I were separated to handle individual projects, it became our motivation to explore and discover new areas to improve our skills. The experience at Infosoft MCBS has been instrumental in enhancing our programming expertise. Creating webpages using various APIs and frameworks has equipped us with the skills needed to compete in today's rapidly evolving technological landscape. Furthermore, working on real-world projects and collaborating with a diverse team has offered invaluable insights, enriching our learning journey. We eagerly anticipate applying our enhanced skills and knowledge to future projects, thereby contributing to our ongoing growth and success.
           </span>
         </div>
