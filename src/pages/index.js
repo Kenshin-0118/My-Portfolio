@@ -8,8 +8,9 @@ import { faApper, faCss3, faFacebook, faHtml5, faInstagram, faJava, faJs, faLara
 
 
 import Navbar from '../components/navbar';
-import HeroSection from '../components/HeroSection';
-import About from '../components/About';
+import HeroSection from '../sections/HeroSection';
+import About from '../sections/About';
+import Education from '../sections/Education'
 import Modal from '../components/modal';
 
 import { Carousel } from 'react-responsive-carousel';
@@ -87,23 +88,23 @@ function Profile() {
     
 
   return (
-    <div className='w-full h-auto relative'>
+    <div className='w-full h-full flex flex-col relative'>
     <div className="w-full sticky top-0 bg-[#0A1622] bg-opacity-50 z-40 shadow-2xl">
       <Navbar setSection={setSection}/>
     </div>
-    <div className='flex flex-col gap-4 relative'>
+      <div className='w-full'/>
       <HeroSection setSection={setSection}/>
       <About/>
 
       {/* Certificates Section */}
       <span className='certificates'/>
       <section className='w-full h-full relative mx-auto max-w-screen-xl' data-aos="fade-up" data-aos-duration="500">
-      <div className="w-full sticky top-16 z-50 text-white font-bold text-3xl  px-4 , md:px-8 md:text-4xl py-4 bg-[#000c18]">Certificates</div>
+      <div className="w-full sticky top-16 z-50 text-white font-bold text-3xl  px-4 , md:px-8 md:text-4xl py-4 bg-brand-dark">Certificates</div>
         <article
         class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 p-4 md:px-8 lg:px-16"
         >
         {certificates.map(item => (
-          <div key={item.id} className='col-span-1 group backdrop-blur border border-[#0ea5e9] border-2 bg-opacity-50 rounded-xl overflow-hidden hover:bg-opacity-100 transition shadow-2xl p-4'
+          <div key={item.id} className='col-span-1 group backdrop-blur border border-brand-cyan border-2 bg-opacity-50 rounded-xl overflow-hidden hover:bg-opacity-100 transition shadow-2xl p-4'
           onClick={()=>openModal(item)} data-aos="fade-up">
             <div className='w-full overflow-hidden rounded-lg'>
              <img src={item.img} alt='cert-image' className='transition group-hover:scale-110 object-cover aspect-video'/>
@@ -122,26 +123,10 @@ function Profile() {
         </article>
       </section>
 
-      {/* Education Section */}
-      {/* <span className='education'/>
-      <section className='education w-full h-full relative mx-auto max-w-screen-xl' data-aos="fade-up" data-aos-duration="500">
-      <div className="w-full sticky top-16 z-50 text-white font-bold text-3xl  px-4 , md:px-8 md:text-4xl py-4 bg-[#000c18]">Education</div>
-        <div className='w-full h-full flex justify-center flex-col items-center backdrop-blur bg-opacity-75 border border-[#0ea5e9] border-2 p-4 rounded-xl overflow-hidden'>
-          <div className='w-full h-full grid grid-cols-1'>
-            <div className='col-span-1 lg:col-span-2 flex flex-col items-center justify-center p-4'>
-              <span className='w-full py-8 text-white font-bold text-4xl sm:text-5xl lg:text-6xl text-center'
-              data-aos="zoom-in">
-                Education Section
-              </span>
-            </div>
-          </div>
-        </div>
-      </section> */}
-
       {/* Journal Section */}
       <span className='journal'/>
       <section className='w-full h-full relative mx-auto max-w-screen-xl' data-aos="fade-up" data-aos-duration="500">
-      <div className="w-full sticky top-16 z-50 text-white font-bold text-3xl  px-4 , md:px-8 md:text-4xl py-4 bg-[#000c18]">Journal</div>
+      <div className="w-full sticky top-16 z-50 text-white font-bold text-3xl  px-4 , md:px-8 md:text-4xl py-4 bg-brand-dark">Journal</div>
         <div className='w-full h-full flex justify-center flex-col items-center backdrop-blur bg-opacity-75 p-4 rounded-xl overflow-hidden'>
         <article
         class="grid grid-cols-1 md:grid-cols-2 gap-4"
@@ -163,18 +148,6 @@ function Profile() {
         </article>
         </div>
       </section>
-
-      <footer className='w-full bg-[#0A1622] p-4 flex flex-col items-center justify-center'>
-        <section className='w-full flex flex-row p-2 text-4xl gap-4 justify-center'>
-        <FontAwesomeIcon icon={faFacebook} className='text-gray-400 hover:text-white transition' title='Facebook Profile' onClick={() => window.open('https://www.facebook.com/kenneth.candia.16', '_blank')}/>
-        <FontAwesomeIcon icon={faEnvelope} className='text-gray-400 hover:text-white transition'  onClick={() => window.open('mailto:someone@example.com', '_blank')}/>
-        </section>
-        <span className='w-full text-gray-400 p-2 text-center'>
-        © Kenneth Candia 2024. All Rights Reserved.
-        </span>
-      </footer>
-
-    </div>
     <Modal show={showModal} onClose={closeModal}>
       <div className='flex flex-col'>
         <span className='flex items-center justify-center mb-4'>
