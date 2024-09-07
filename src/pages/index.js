@@ -91,7 +91,7 @@ function Profile() {
     <div className="w-full sticky top-0 bg-[#0A1622] bg-opacity-50 z-40 shadow-2xl">
       <Navbar setSection={setSection}/>
     </div>
-    <div className='flex flex-col w-full gap-4 relative'>
+    <div className='flex flex-col w-full gap-4 relative overflow-x-scroll'>
       <HeroSection setSection={setSection}/>
       <About/>
 
