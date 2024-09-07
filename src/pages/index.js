@@ -87,17 +87,17 @@ function Profile() {
     
 
   return (
-    <div>
+    <div className='w-full h-auto relative'>
     <div className="w-full sticky top-0 bg-[#0A1622] bg-opacity-50 z-40 shadow-2xl">
       <Navbar setSection={setSection}/>
     </div>
-    <div className='flex flex-col w-full gap-4 relative overflow-x-scroll'>
+    <div className='flex flex-col gap-4 relative'>
       <HeroSection setSection={setSection}/>
       <About/>
 
       {/* Certificates Section */}
       <span className='certificates'/>
-      <section className='w-full h-full relative' data-aos="fade-up" data-aos-duration="500">
+      <section className='w-full h-full relative mx-auto max-w-screen-xl' data-aos="fade-up" data-aos-duration="500">
       <div className="w-full sticky top-16 z-50 text-white font-bold text-3xl  px-4 , md:px-8 md:text-4xl py-4 bg-[#000c18]">Certificates</div>
         <article
         class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 p-4 md:px-8 lg:px-16"
@@ -124,7 +124,7 @@ function Profile() {
 
       {/* Education Section */}
       {/* <span className='education'/>
-      <section className='education w-full h-full relative' data-aos="fade-up" data-aos-duration="500">
+      <section className='education w-full h-full relative mx-auto max-w-screen-xl' data-aos="fade-up" data-aos-duration="500">
       <div className="w-full sticky top-16 z-50 text-white font-bold text-3xl  px-4 , md:px-8 md:text-4xl py-4 bg-[#000c18]">Education</div>
         <div className='w-full h-full flex justify-center flex-col items-center backdrop-blur bg-opacity-75 border border-[#0ea5e9] border-2 p-4 rounded-xl overflow-hidden'>
           <div className='w-full h-full grid grid-cols-1'>
@@ -140,7 +140,7 @@ function Profile() {
 
       {/* Journal Section */}
       <span className='journal'/>
-      <section className='w-full h-full relative' data-aos="fade-up" data-aos-duration="500">
+      <section className='w-full h-full relative mx-auto max-w-screen-xl' data-aos="fade-up" data-aos-duration="500">
       <div className="w-full sticky top-16 z-50 text-white font-bold text-3xl  px-4 , md:px-8 md:text-4xl py-4 bg-[#000c18]">Journal</div>
         <div className='w-full h-full flex justify-center flex-col items-center backdrop-blur bg-opacity-75 p-4 rounded-xl overflow-hidden'>
         <article

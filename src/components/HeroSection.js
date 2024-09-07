@@ -12,8 +12,8 @@ function HeroSection({setSection}) {
   return (
     <>
       <span className='home w-full'/>
-      <section className='landing w-full h-screen relative p-4 p-2 md:p-20' data-aos="fade-up" data-aos-once="true" data-aos-duration="500">
-        <div className='w-full h-full flex justify-center flex-col items-center'>
+      <section className='landing w-full h-screen relative p-4 border-b-4 border-[#0ea5e9] mt-[-16px]' data-aos="fade-up" data-aos-once="true" data-aos-duration="500">
+        <div className='w-full h-full flex justify-center flex-col items-center mx-auto max-w-screen-xl'>
           <div className='w-full grid grid-cols-1 md:grid-cols-2 gap-2 lg:grid-cols-3 pb-40'>
           <div className='col-span-1 p-4 flex flex-col items-center justify-center' data-aos="fade-right" data-aos-once="true" data-aos-delay="300">
               <div className='overflow-hidden rounded-full aspect-square bg-[#0d96d5] border-4 z-10 glow-effect'>
@@ -35,7 +35,7 @@ function HeroSection({setSection}) {
               </span>
               <span className='w-full text-white font-semibold text-lg md:text-xl text-center md:text-right pt-10'
               data-aos="fade-up" data-aos-once="true" data-aos-delay="1000">
-                <button className='px-6 py-2 bg-[#0ea5e9] rounded-xl mr-2 mb-2'onClick={() => window.open('https://docs.google.com/document/d/1SXXXnNHS_BbdXi-wLbUZffXLIJjP-_GCPVI-0XZbCWI/edit?usp=sharing', '_blank')}>
+                <button className='px-6 py-2 bg-[#0ea5e9] rounded-xl mr-2 mb-2'onClick={() => window.open('https://drive.google.com/file/d/1AHwdZM0x7lG8BhHUnmaS1gYVET7WlH35/view?usp=sharing', '_blank')}>
                   Show CV
                 </button>
                 <button className='px-6 py-2 border-2 border-[#0ea5e9] rounded-xl' onClick={() => setSection('about')}>

@@ -24,7 +24,7 @@ function Profile() {
   // Function to dynamically calculate the number of slides
   const calculateSlidesToShow = () => {
     const containerWidth = window.innerWidth; // You can also get specific container size
-    const itemWidth = 150; // Set your desired item width here
+    const itemWidth = 200; // Set your desired item width here
 
     const visibleItems = Math.floor(containerWidth / itemWidth); // Calculate number of visible items
     setSlidesToShow(visibleItems);
@@ -70,13 +70,13 @@ function Profile() {
       { id: 14, name: 'Vue', iconClass: 'devicon-vuejs-plain' },
       { id: 15, name: 'Laravel', iconClass: 'devicon-laravel-plain' },
       { id: 16, name: 'Firebase', iconClass: 'devicon-firebase-plain' },
-      { id: 17, name: 'Android Java', iconClass: 'devicon-android-plain' },
+      { id: 17, name: 'Android', iconClass: 'devicon-android-plain' },
       { id: 18, name: 'Github', iconClass: 'devicon-github-original' },
     ]
   return (
     <>
       <span className='about w-full'/>
-      <section className='w-full h-full relative' data-aos="fade-up" data-aos-duration="500">
+      <section className='w-full h-full relative mx-auto max-w-screen-xl' data-aos="fade-up" data-aos-duration="500">
       <div className="w-full sticky top-16 z-50 text-white font-bold text-3xl  px-4 , md:px-8 md:text-4xl py-4 bg-[#000c18]">About</div>
       <div className='grid grid-cols-1 lg:grid-cols-3  md:px-8 lg:px-16'>
       <div className='col-span-1 lg:col-span-2 h-full flex justify-center flex-col items-center p-4 rounded-xl overflow-hidden gap-4'
@@ -85,11 +85,12 @@ function Profile() {
             Hello, I am Kenneth I. Candia
           </span>
           <span className='w-full text-slate-300 text-medium text-xl sm:text-xl lg:text-2xl text-center lg:text-left md:indent-8'>
-          A Graduating BSIT Student from the Holy Cross of Davao College, aspiring to be a proficient Full-Stack Developer. I have a strong foundation in front-end and back-end technologies, with hands-on experience in various programming languages and frameworks. Passionate about creating seamless web applications, I am eager to apply my skills to real-world projects, continuously learn new technologies, and contribute to innovative solutions that make a positive impact.
+          As a recent graduate with a Bachelor of Science in Information Technology from the Holy Cross of Davao College, I am eager to begin my career as a Full-Stack Developer. I have a solid understanding of both front-end and back-end technologies, with practical experience in multiple programming languages and frameworks. I am passionate about building intuitive and efficient web applications, and I am excited to apply my skills in real-world settings. Motivated to learn and grow, I look forward to contributing to innovative projects that drive positive change.
           </span>
       </div>
       <div className='col-span-1 flex items-center p-2' data-aos="fade-left">
-      <img src='programmer.gif' alt='my-photo' className='w-full transition squible glow-effect'/>
+      {/* <img src='programmer.gif' alt='my-photo' className='w-full transition squible glow-effect'/> */}
+      <iframe src="https://lottie.host/embed/55aa7506-fa5a-4577-b3ba-5b279cba80b7/DRGgjQyC5p.json" className='h-full w-full'></iframe>
       </div>
           {/* Slick Carousel Section */}
           <div className="col-span-1 lg:col-span-3 text-white font-bold text-3xl px-4 md:px-8 md:text-4xl py-4 bg-[#000c18]"
@@ -100,7 +101,9 @@ function Profile() {
             <article className='w-full p-2'>
               <Slider {...settings}>
                 {techs.map(item => (
-                  <div key={item.id} className="flex flex-col items-center px-4 py-2 text-center">
+                  <div key={item.id} className="flex flex-col items-center px-4 py-2 text-center
+                  hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-br from-pink-500 to-violet-500
+                  transition duration-150 ease-in-out">
                     <i className={`${item.iconClass} text-6xl`}></i>
                     <br/>
                     <span className="text-lg w-full whitespace-nowrap line-clamp-1">{item.name}</span>

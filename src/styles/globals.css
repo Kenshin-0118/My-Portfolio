@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 .landing {
-  border-radius: 10px;
   --s: 80px; /* control the size */
   --c1: #0ea4e956;
   --c2: #000c18;
