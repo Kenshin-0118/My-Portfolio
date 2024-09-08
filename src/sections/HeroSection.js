@@ -12,9 +12,9 @@ function HeroSection({setSection}) {
   return (
     <>
       <span className='home w-full'/>
-      <section className='landing w-full h-screen relative p-4 border-b-4 border-brand-cyan mt-[-16px]' data-aos="fade-up" data-aos-duration="500">
+      <section className='landing w-full h-screen relative p-4 border-b-4 border-brand-cyan mt-[-16px] mb-10' data-aos="fade-up" data-aos-duration="500">
         <div className='w-full h-full flex justify-center flex-col items-center mx-auto max-w-screen-xl'>
-          <div className='w-full grid grid-cols-1 md:grid-cols-2 gap-2 lg:grid-cols-3 pb-40'>
+          <div className='w-full grid grid-cols-1 md:grid-cols-2 gap-2 lg:grid-cols-3 pb-10'>
           <div className='col-span-1 p-4 flex flex-col items-center justify-center' data-aos="fade-right" data-aos-once="true" data-aos-delay="300">
               <div className='overflow-hidden rounded-full aspect-square bg-[#0d96d5] border-4 z-10 glow-effect'>
               <img src='ako_grad2.jpg' alt='my-photo' className='h-full w-full transition object-cover'/>

@@ -39,26 +39,26 @@ const theme = createTheme({
 export default function App({ Component, pageProps }) {
 
   // Example useEffect for disabling right-click and keyboard shortcuts (uncomment if needed)
-  // useEffect(() => {
-  //   document.addEventListener('contextmenu', (e) => e.preventDefault());
-  //   document.addEventListener('keydown', (e) => {
-  //     if (
-  //       e.key === 'F12' || 
-  //       (e.ctrlKey && e.shiftKey && e.key === 'I') || 
-  //       (e.ctrlKey && e.shiftKey && e.key === 'J') || 
-  //       (e.ctrlKey && e.key === 'U') || 
-  //       (e.ctrlKey && e.key === 'S') || 
-  //       (e.ctrlKey && e.key === 'C') || 
-  //       (e.ctrlKey && e.key === 'A') || 
-  //       (e.ctrlKey && e.key === 'E') || 
-  //       (e.ctrlKey && e.key === 'H') || 
-  //       (e.ctrlKey && e.key === 'F') || 
-  //       (e.ctrlKey && e.key === 'G')
-  //     ) {
-  //       e.preventDefault();
-  //     }
-  //   });
-  // }, []);
+  useEffect(() => {
+    document.addEventListener('contextmenu', (e) => e.preventDefault());
+    document.addEventListener('keydown', (e) => {
+      if (
+        e.key === 'F12' || 
+        (e.ctrlKey && e.shiftKey && e.key === 'I') || 
+        (e.ctrlKey && e.shiftKey && e.key === 'J') || 
+        (e.ctrlKey && e.key === 'U') || 
+        (e.ctrlKey && e.key === 'S') || 
+        (e.ctrlKey && e.key === 'C') || 
+        (e.ctrlKey && e.key === 'A') || 
+        (e.ctrlKey && e.key === 'E') || 
+        (e.ctrlKey && e.key === 'H') || 
+        (e.ctrlKey && e.key === 'F') || 
+        (e.ctrlKey && e.key === 'G')
+      ) {
+        e.preventDefault();
+      }
+    });
+  }, []);
 
   return (
     <>

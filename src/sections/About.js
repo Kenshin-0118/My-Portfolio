@@ -1,9 +1,19 @@
 
 import { Inter } from '@next/font/google'
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // Optional responsive carousel
 import Slider from "react-slick"; 
 import 'aos/dist/aos.css';
+
+import Accordion from '@mui/material/Accordion';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import MuiAccordionSummary from '@mui/material/AccordionSummary';
+import MuiAccordionDetails from '@mui/material/AccordionDetails';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { styled } from '@mui/material/styles';
+import Divider from '@mui/material/Divider';
+
 import Timeline from '@mui/lab/Timeline';
 import TimelineItem from '@mui/lab/TimelineItem';
 import TimelineSeparator from '@mui/lab/TimelineSeparator';
@@ -19,9 +29,24 @@ import Typography from '@mui/material/Typography';
 
 const inter = Inter({ subsets: ['latin'] })
 
-function Profile() {
+function About() {
 
   const [slidesToShow, setSlidesToShow] = useState(5); // Default value
+
+  const [expanded, setExpanded] = useState('generalInfo');
+
+  const handleChange = (panel) => (event, isExpanded) => {
+    setExpanded(isExpanded ? panel : expanded);
+  };
+  const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
+    padding: theme.spacing(2),
+    borderTop: '1px solid rgba(0, 0, 0, .125)',
+    backgroundColor: 'transparent', // Set the background to transparent
+    ...theme.applyStyles('dark', {
+      backgroundColor: 'transparent', // Transparent in dark mode too
+    }),
+  }));
+  
 
   // Function to dynamically calculate the number of slides
   const calculateSlidesToShow = () => {
@@ -83,11 +108,130 @@ function Profile() {
       <div className='grid grid-cols-1 lg:grid-cols-3  md:px-8 lg:px-16'>
       <div className='col-span-1 lg:col-span-2 h-full flex justify-center flex-col items-center p-4 rounded-xl overflow-hidden gap-4'
        data-aos="fade-right">
-          <span className='w-full text-brand-cyan font-semibold text-2xl sm:text-3xl lg:text-4xl text-left'>
+          {/* <span className='w-full text-brand-cyan font-semibold text-2xl sm:text-3xl lg:text-4xl text-left'>
             Hello, I am Kenneth I. Candia
           </span>
-          <span className='w-full text-slate-300 text-medium text-xl sm:text-xl lg:text-2xl text-center lg:text-left md:indent-8'>
-          As a recent graduate with a Bachelor of Science in Information Technology from the Holy Cross of Davao College, I am eager to begin my career as a Full-Stack Developer. I have a solid understanding of both front-end and back-end technologies, with practical experience in multiple programming languages and frameworks. I am passionate about building intuitive and efficient web applications, and I am excited to apply my skills in real-world settings. Motivated to learn and grow, I look forward to contributing to innovative projects that drive positive change.
+          <span className='w-full text-slate-300 text-medium text-lg sm:text-lg lg:text-xl text-justify indent-8'>
+          I am a recent IT graduate from Holy Cross of Davao College with a strong foundation in full-stack development, eager to apply my skills in building efficient web applications and contribute to innovative projects.
+          </span> */}
+          <span className='w-full'>
+            <Accordion expanded={expanded === 'generalInfo'} onChange={handleChange('generalInfo')}>
+              <AccordionSummary
+                expandIcon={<ExpandMoreIcon />}
+                aria-controls="generalInfobh-content"
+                id="generalInfobh-header"
+              >
+                <Typography className='text-brand-cyan text-xl md:text-2xl font-semibold' style={{ width: '90%', flexShrink: 0}}>
+                General Information
+                </Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <Divider style={{ marginBottom: '10px' }} />
+                <Typography className='text-justify indent-8 text-lg md:text-xl'>
+                Hello! I'm Kenneth I. Candia, a recent graduate from Holy Cross of Davao College with a passion for full-stack development. I love building efficient, intuitive web applications and am eager to contribute to exciting projects that make a positive impact.
+                </Typography>
+              </AccordionDetails>
+            </Accordion>
+            <Accordion expanded={expanded === 'personalData'} onChange={handleChange('personalData')}>
+              <AccordionSummary
+                expandIcon={<ExpandMoreIcon />}
+                aria-controls="personalDatabh-content"
+                id="personalDatabh-header"
+              >
+                <Typography className='text-brand-cyan text-xl md:text-2xl font-semibold' style={{ width: '90%', flexShrink: 0 }}>Personal data</Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <Divider style={{ marginBottom: '10px' }} />
+                <Typography className='text-justify text-lg md:text-xl '>
+                  <strong>Birthdate:</strong>
+                  <ul className='list-disc list-inside pl-4'>
+                    <li>March 31 2002</li>
+                  </ul>
+                  <strong>Civil Status:</strong>
+                  <ul className='list-disc list-inside pl-4'>
+                    <li>Single</li>
+                  </ul>
+                  <strong>Email:</strong>
+                  <ul className='list-disc list-inside pl-4'>
+                    <li>Email: kenchicken0118@gmail.com</li>
+                  </ul>
+                  <strong>Phone:</strong>
+                  <ul className='list-disc list-inside pl-4'>
+                    <li>Phone: 09633136492</li>
+                  </ul>
+                </Typography>
+              </AccordionDetails>
+            </Accordion>
+            <Accordion expanded={expanded === 'EducationInfo'} onChange={handleChange('EducationInfo')}>
+              <AccordionSummary
+                expandIcon={<ExpandMoreIcon />}
+                aria-controls="EducationInfobh-content"
+                id="EducationInfobh-header"
+              >
+                <Typography className='text-brand-cyan text-xl md:text-2xl font-semibold' style={{ width: '90%', flexShrink: 0 }}>Education and Certification</Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <Divider style={{ marginBottom: '10px' }} />
+                {/* <Typography className='text-justify indent-8 text-lg md:text-xl'>
+                I hold a Bachelor of Science in Information Technology from Holy Cross of Davao College. I've also completed various online courses in full-stack development and cloud computing.
+                </Typography> */}
+                <Typography className='text-justify text-lg md:text-xl'>
+                  <strong>Batchelor's Degree:</strong>
+                  <ul className='list-disc list-inside pl-4'>
+                    <li>Information Technology</li>
+                  </ul>
+                  <strong>Certifications:</strong>
+                  <ul className='list-disc list-inside pl-4'>
+                    <li>SWEEP 2023</li>
+                    <li>Food and Beverage Services NCII 2020</li>
+                    <li>Front Office Services NCII 2020</li>
+                    <li>House Keeping NCII 2020</li>
+                  </ul>
+                  <strong>National Certificates (TVL):</strong>
+                  <ul className='list-disc list-inside pl-4'>
+                    <li>Cookery NCII 2018</li>
+                    <li>Food and Beverage Services NCII 2020</li>
+                    <li>Front Office Services NCII 2020</li>
+                    <li>House Keeping NCII 2020</li>
+                  </ul>
+                </Typography>
+              </AccordionDetails>
+            </Accordion>
+            <Accordion expanded={expanded === 'ExperienceInfo'} onChange={handleChange('ExperienceInfo')}>
+              <AccordionSummary
+                expandIcon={<ExpandMoreIcon />}
+                aria-controls="ExperienceInfobh-content"
+                id="ExperienceInfobh-header"
+              >
+                <Typography className='text-brand-cyan text-xl md:text-2xl font-semibold' style={{ width: '90%', flexShrink: 0 }}>Work Experience</Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <Divider style={{ marginBottom: '10px' }} />
+
+                <Typography className='text-justify text-lg md:text-xl'>
+                  <strong>Work Immersion</strong>
+                  <ul className='list-disc list-inside pl-4'>
+                    <li>Magsige MPC</li>
+                  </ul>
+                </Typography>
+
+                <Typography className='text-justify text-lg md:text-xl'>
+                  <strong>486 Hours Internship</strong>
+                  <ul className='list-disc list-inside pl-4'>
+                    <li>PageOne147 (Full Stack Developer)</li>
+                    <li>February 15 – May 8, 2024</li>
+                  </ul>
+                </Typography>
+
+                <Typography className='text-justify text-lg md:text-xl'>
+                  <strong>Junior Developer</strong>
+                  <ul className='list-disc list-inside pl-4'>
+                    <li>PageOne247 (Full Stack Developer)</li>
+                    <li>Present</li>
+                  </ul>
+                </Typography>
+              </AccordionDetails>
+            </Accordion>
           </span>
       </div>
       <div className='hidden col-span-1 flex items-center p-2 lg:block' data-aos="fade-left">
@@ -194,4 +338,4 @@ function Profile() {
   )
 }
 
-export default Profile;
+export default About;
