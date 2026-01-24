@@ -35,7 +35,7 @@ function HeroSection({setSection}) {
               </span>
               <span className='w-full text-white font-semibold text-lg md:text-xl text-center md:text-right pt-10'
               data-aos="fade-up" data-aos-once="true" data-aos-delay="1000">
-                <button className='px-6 py-2 bg-brand-cyan rounded-xl mr-2 mb-2'onClick={() => window.open('https://drive.google.com/file/d/1AHwdZM0x7lG8BhHUnmaS1gYVET7WlH35/view?usp=sharing', '_blank')}>
+                <button className='px-6 py-2 bg-brand-cyan rounded-xl mr-2 mb-2'onClick={() => window.open('https://docs.google.com/document/d/1eTkUFzqG1-aEnrIzEMl5FZczfqo8HToZ/edit?usp=sharing&ouid=117003138271770141554&rtpof=true&sd=true', '_blank')}>
                   Show CV
                 </button>
                 <button className='px-6 py-2 border-2 border-brand-cyan rounded-xl' onClick={() => setSection('about')}>

@@ -72,7 +72,7 @@ const NavBar = ({setSection}) => {
             <div>
               <button
                 className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-gray-800 hover:bg-white mt-4 lg:mt-0"
-                onClick={() => window.open('https://github.com/Kenshin-0118', '_blank')}
+                onClick={() => window.open('https://github.com/ethereal-zero', '_blank')}
               >
                 GitHub<FontAwesomeIcon icon={faGithub} className='pl-2'/>
               </button>
